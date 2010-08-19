@@ -4,7 +4,7 @@ class Account
   
   def self.for(owner)
     @accounts ||= {}
-    @accounts[owner] = new(owner)
+    @accounts[owner] ||= new(owner)
   end
   
   def initialize(owner)
