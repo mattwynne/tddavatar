@@ -19,5 +19,12 @@ describe Account do
       receipt.should =~ /20/
     end
     
+    it "shows the payment type" do
+      receipt.should =~ /cash/
+    end
+    
+    it "shows the total" do
+      receipt.should =~ /35/
+    end
   end
 end
