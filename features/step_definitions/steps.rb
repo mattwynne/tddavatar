@@ -1,25 +1,25 @@
 Given /^the following operations are available:$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  table.hashes.each do |row|
+    register_operation_price(row["operation"], row["price"])
+  end
 end
 
-Given /^there is an owner Dave Atkins, let's call him "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Given /^there is an owner (.*), let's call him "([^"]*)"$/ do |name, nickname|
+  remember_owner(name, nickname)
 end
 
-Given /^Dave brings his pet named Fluffy into the clinic for the following operations:$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+Given /^(.*) brings his pet named (.*) into the clinic for the following operations:$/ do |owner_nickname, pet_name, operations|
+  create_visit(owner_nickname, pet_name, operations.raw.flatten)
 end
 
 When /^the veterinarian charges him for the visit$/ do
-  pending # express the regexp above with the code you wish you had
+  charge_for_visit
 end
 
-When /^Dave pays cash$/ do
-  pending # express the regexp above with the code you wish you had
+When /^(.*) pays (.*)$/ do |nickname, payment_type|
+  pay_with(payment_type, nickname)
 end
 
 Then /^Dave is given a receipt which looks like this:$/ do |string|
-  pending # express the regexp above with the code you wish you had
+  receipt.should == string
 end
