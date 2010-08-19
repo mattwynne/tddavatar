@@ -18,7 +18,7 @@ Feature: Pay bill
       Operations:
         $10 (routine check up)
         $5 (shots)
-        
+      
       Total to pay: $15
       
       Paid cash, received with thanks
