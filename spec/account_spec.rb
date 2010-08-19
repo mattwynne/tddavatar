@@ -18,5 +18,6 @@ describe Account do
       receipt.should =~ /15/
       receipt.should =~ /20/
     end
+    
   end
 end
