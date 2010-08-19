@@ -25,6 +25,7 @@ class Practice
   end
   
   def receive_payment_from(owner, payment_type)
+    Account.for(owner).produce_receipt(payment_type)
   end
   
 private
