@@ -1,6 +1,11 @@
-Feature: Pay bill
+Feature: Print Receipt
 
+  When a customer comes into the practice, we need to be able to 
+  print out a receipt.
+  
   Background: Prices
+    We have a fixed price list
+  
     Given the following operations are available:
       | operation        | price |
       | routine check up | 10    |
